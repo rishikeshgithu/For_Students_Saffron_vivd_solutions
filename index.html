@@ -10,9 +10,28 @@
             margin: 0;
             padding: 0;
         }
+        .light-blue-button {
+    background-color: #007BFF; /* Light blue color */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
         div {
             text-align: center; /* Center-align content within the div */
-        }
+            border-left: 20px solid blue;
+            border-right: 20px solid blue;
+            border-top: 20px solid blue;
+            border-bottom: 20px solid blue;
+          }
+
         h1, h2 {
             text-align: center; /* Center-align headers */
             color: #333; /* Dark grey text color for headings */
@@ -37,87 +56,218 @@
         img {
             max-width: 100%;
             height: auto;
+            cursor: pointer; /* Change cursor to pointer when hovering over images */
+        }
+        button {
+            background-color: #ADD8E6; /* Light blue button */
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div>
-        <h1>Our Goal</h1>
+        <h1>Welcome to Project Generator</h1>
         <p>We provide Projects for Btech and 10th class and 12th class students, and students will get a guide on how to do it and a manual for how to do it step by step written by Project lovers.</p>
+        <p>All you need to do is click the components below and they will be selected. The website will generate the projects you can build with them.</p>
 
-        <h2>The Projects list</h2>
-        <p>Here is a list of projects we do:</p>
+        <h2>Component List</h2>
+        <p>Here is a list of components you can select from. Please click the components you want in your project.</p>
 
-        <ul>
+        <ul id="projectList">
             <!-- Section 1: 2 Car Chassis -->
             <li>
-                <img src="2-car-chassis-image.jpg" alt="2 Car Chassis">
+                <img src="2-car-chassis-image.jpg" alt="2 Car Chassis" onclick="addToCart('2 Car Chassis', '₹499')">
                 <h3>2 Car Chassis</h3>
-                <p>Details about 2 Car Chassis. Price: $XX</p>
+                <p>Details about 2 Car Chassis. Price: ₹499</p>
             </li>
 
             <!-- Section 2: 4 Car Chassis -->
             <li>
-                <img src="4-car-chassis-image.jpg" alt="4 Car Chassis">
+                <img src="4-car-chassis-image.jpg" alt="4 Car Chassis" onclick="addToCart('4 Car Chassis', '₹699')">
                 <h3>4 Car Chassis</h3>
-                <p>Details about 4 Car Chassis. Price: $XX</p>
+                <p>Details about 4 Car Chassis. Price: ₹699</p>
             </li>
 
             <!-- Section 5: Arduino -->
             <li>
-                <img src="arduino-image.jpg" alt="Arduino">
+                <img src="arduino-image.jpg" alt="Arduino" onclick="addToCart('Arduino', '₹500')">
                 <h3>Arduino</h3>
-                <p>Details about Arduino. Price: $XX</p>
+                <p>Details about Arduino. Price: ₹500</p>
             </li>
 
             <!-- Section 6: ESP 8266 -->
             <li>
-                <img src="esp8266-image.jpg" alt="ESP 8266">
+                <img src="esp8266-image.jpg" alt="ESP 8266" onclick="addToCart('ESP 8266', '₹300')">
                 <h3>ESP 8266</h3>
-                <p>Details about ESP 8266. Price: $XX</p>
+                <p>Details about ESP 8266. Price: ₹300</p>
             </li>
 
             <!-- Section 7: ESP 32 (Speech Ability) -->
             <li>
-                <img src="esp32-speech-image.jpg" alt="ESP 32 (Speech Ability)">
+                <img src="esp32-speech-image.jpg" alt="ESP 32 (Speech Ability)" onclick="addToCart('ESP 32 (Speech Ability)', '₹500')">
                 <h3>ESP 32 (Speech Ability)</h3>
-                <p>Details about ESP 32 (Speech Ability). Price: $XX</p>
+                <p>Details about ESP 32 (Speech Ability). Price: ₹500</p>
             </li>
 
             <!-- Section 8: ESP 32 Camera (Object Detection) -->
             <li>
-                <img src="esp32-camera-image.jpg" alt="ESP 32 Camera (Object Detection)">
+                <img src="esp32-camera-image.jpg" alt="ESP 32 Camera (Object Detection)" onclick="addToCart('ESP 32 Camera (Object Detection)', '₹750')">
                 <h3>ESP 32 Camera (Object Detection)</h3>
-                <p>Details about ESP 32 Camera (Object Detection). Price: $XX</p>
+                <p>Details about ESP 32 Camera (Object Detection). Price: ₹750</p>
             </li>
 
             <!-- Section 9: Speaker -->
             <li>
-                <img src="speaker-image.jpg" alt="Speaker">
+                <img src="speaker-image.jpg" alt="Speaker" onclick="addToCart('Speaker', '₹99')">
                 <h3>Speaker</h3>
-                <p>Details about Speaker. Price: $XX</p>
+                <p>Details about Speaker. Price: ₹99</p>
             </li>
 
             <!-- Section 10: Ultrasound Sensor -->
             <li>
-                <img src="ultrasound-sensor-image.jpg" alt="Ultrasound Sensor">
+                <img src="ultrasound-sensor-image.jpg" alt="Ultrasound Sensor" onclick="addToCart('Ultrasound Sensor', '₹99')">
                 <h3>Ultrasound Sensor</h3>
-                <p>Details about Ultrasound Sensor. Price: $XX</p>
+                <p>Details about Ultrasound Sensor. Price: ₹99</p>
             </li>
 
             <!-- Section 11: Infrared Sensor -->
             <li>
-                <img src="infrared-sensor-image.jpg" alt="Infrared Sensor">
+                <img src="infrared-sensor-image.jpg" alt="Infrared Sensor" onclick="addToCart('Infrared Sensor', '₹99')">
                 <h3>Infrared Sensor</h3>
-                <p>Details about Infrared Sensor. Price: $XX</p>
+                <p>Details about Infrared Sensor. Price: ₹99</p>
+            </li>
+
+            <li>
+                <img src="AA-Battery-image.jpg" alt="AA Battery" onclick="addToCart('AA Battery', '₹89')">
+                <h3>AA Battery</h3>
+                <p>Details about AA Battery. Price: ₹89</p>
+            </li>
+            <li>
+                <img src="Li-Battery-18650-image.jpg" alt="Lithium Battery" onclick="addToCart('Lithium Battery', '₹149')">
+                <h3>Lithium Battery </h3>
+                <p>Details about Lithium Battery. Price: ₹149</p>
             </li>
         </ul>
 
         <h2>Coding Charges</h2>
-        <p>Details about coding charges. Price: $XX</p>
+        <p>Details about coding charges. Price: ₹50-₹200</p>
+
+        <!-- Shopping Cart -->
+        <h2>Selected Components</h2>
+        <ul id="cart">
+            <!-- Cart items will be displayed here -->
+        </ul>
+
+        <!-- Generate Projects Button -->
+        <button id="generateProjectsButton" onclick="generatePossibleProjects()">Generate Projects</button>
+
+        <!-- Possible Projects List -->
+        <h2>Possible Projects</h2>
+        <ul id="possibleProjects">
+            <!-- Possible projects will be displayed here -->
+        </ul>
+        <button class="custom-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc2w0U7WMvL7M1NeqQ3vRfFGr-KDGjSIS4eAJOi8NC2xMegQg/viewform?usp=sf_link'">
+          Click to fill form
+        </button>
+
 
         <h2>Contact Information</h2>
         <p>For further help, contact P S Rishikesh at 9972741817</p>
+        <p>Email: saffronvividsolutions@gmail.com</p>
     </div>
+
+    <script>
+        // JavaScript for handling the shopping cart
+        const cart = [];
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById("cart");
+            cartList.innerHTML = ""; // Clear the current cart list
+
+            cart.forEach((item, index) => {
+                const listItem = document.createElement("li");
+                listItem.className = "cart-item";
+                listItem.innerHTML = `
+                    <span>${item.name} - Price: ${item.price}</span>
+                    <button class="delete-button" onclick="removeFromCart(${index})">Delete</button>
+                `;
+                cartList.appendChild(listItem);
+            });
+
+            // Store cart data in local storage
+            localStorage.setItem("cartData", JSON.stringify(cart));
+        }
+
+        // Function to generate possible projects based on selected components
+        function generatePossibleProjects() {
+            const selectedComponents = cart.map(item => item.name);
+
+            // Define possible project ideas based on selected components
+            const possibleProjects = [
+              {
+                                  name: "Ultrasound Based Arduino Car 2 Wheeler",
+                                  description: " ₹ 1399 This project is easy to program. This project is good for novice.",
+                                  requiredComponents: ["2 Car Chassis"]
+                              },
+
+              {
+                                  name: "Ultrasound Based Arduino Car 4 Wheeler",
+                                  description: " ₹ 1499 This project is easy to program. This project is good for novice.",
+                                  requiredComponents: ["4 Car Chassis"]
+                              },
+
+              {
+                                  name: "Bluettoth Based Arduino Car 2 Wheeler",
+                                  description: " ₹ 1499 This is a bluetooth controlled Car Easy project for beginners.",
+                                  requiredComponents: ["2 Car Chassis"]
+                              },
+              {
+                                  name: "Internet Based Arduino Car 2 Wheeler",
+                                  description: " ₹ 1499 This is a internet controlled Car Easy project for beginners",
+                                  requiredComponents: ["2 Car Chassis"]
+                              },
+              {
+                                  name: "Bluetooth Based Arduino Car 4 Wheeler",
+                                  description: " ₹ 1549 This is a bluetooth controlled Car Easy project for beginners.",
+                                  requiredComponents: ["4 Car Chassis"]
+                              },
+              {
+                                  name: "Internet Based Arduino Car 4 Wheeler",
+                                  description: " ₹ 1549 This is a internet controlled Car Easy project for beginners",
+                                  requiredComponents: ["4 Car Chassis"]
+                              },
+                // Add more project ideas based on your components
+            ];
+
+            const possibleProjectsList = document.getElementById("possibleProjects");
+            possibleProjectsList.innerHTML = ""; // Clear the current project list
+
+            possibleProjects.forEach(project => {
+                const requiredComponents = project.requiredComponents;
+                const canBuildProject = requiredComponents.every(component => selectedComponents.includes(component));
+
+                if (canBuildProject) {
+                    const projectItem = document.createElement("li");
+                    projectItem.innerHTML = `
+                        <h3>${project.name}</h3>
+                        <p>${project.description}</p>
+                    `;
+                    possibleProjectsList.appendChild(projectItem);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
