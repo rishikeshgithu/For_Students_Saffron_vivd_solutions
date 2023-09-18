@@ -1,0 +1,16 @@
+              {
+                                  name: "",
+                                  description: " ₹",
+                                  requiredComponents: [""]
+                              },
+              {
+                                  name: "",
+                                  description: " ₹",
+                                  requiredComponents: [""]
+                              },
+              {
+                                  name: "",
+                                  description: " ₹",
+                                  requiredComponents: [""]
+                              },
+            
